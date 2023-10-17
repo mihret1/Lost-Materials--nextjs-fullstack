@@ -1,4 +1,5 @@
 
+import Feed from "@components/Feed"
 
 const Home=()=>{
   return(
@@ -14,7 +15,7 @@ const Home=()=>{
         Lost Materials is website that everyone share what he get from lost honestly and
         many ones find their losted materials and back to their happiness
       </p>
-      Hey, am home
+      <Feed />
     </section>
   )
 }

@@ -40,9 +40,10 @@ const handler=NextAuth({
                 })
             }
             return true
-            
+
         }catch(error){
             console.log(error)
+            return false
         }
         
     }

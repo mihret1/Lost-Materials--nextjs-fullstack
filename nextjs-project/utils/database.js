@@ -11,15 +11,14 @@ export const connectToDB=async()=>{
         }
 
         try{
-            await mongoose.connect(process.env.MONGODB_URI,
-                {  
+            await mongoose.connect(process.env.MONGODB_URI,{  
                     dbName:"lostMaterial",
                     useNewUrlParser:true,
-                    useUnifiedTopology:true
-                 })
-                 isConnected=true
-                 console.log(' MongoDb is connected')
-        }catch(error){
+                    useUnifiedTopology:true})
+                 
+                isConnected=true
+                console.log(' MongoDb is now connected')
+       }catch(error){
             console.log(error)
         }
 }

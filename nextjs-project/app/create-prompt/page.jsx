@@ -6,14 +6,17 @@ import { useRouter } from "next/navigation"
 import Form from "@components/Form"
 
 
-const CreatePost=()=>{
+
+const CreatePrompt=()=>{
+    const router=useRouter()
+    const {data:session}=useSession()
     const [submitting,setSubmiting]=useState(false)
     const [post,setPost]=useState({
         prompt:'',
         tag:''
     })
 
-    const createPost=async(e)=>{
+    const createPrompt=async(e)=>{
           e.preventDefault()
           setSubmiting(true)
 
@@ -39,6 +42,7 @@ const CreatePost=()=>{
           }
     }
 
+
     return(
         <div>
             <Form 
@@ -46,7 +50,7 @@ const CreatePost=()=>{
                 post={post}
                 setPost={setPost}
                 submitting={submitting}
-                handleSubmit={createPost}
+                handleSubmit={createPrompt}
             
             />
         </div>
@@ -54,4 +58,4 @@ const CreatePost=()=>{
 }
 
 
-export default CreatePost
+export default CreatePrompt

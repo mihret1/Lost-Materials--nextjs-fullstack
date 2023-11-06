@@ -25,8 +25,11 @@ export const PATCH=async (request,{params})=>{
         existingPrompt.tag=tag
 
         await existingPrompt.save()
+        return new Response(JSON.stringify(existingPrompt),{status:200})
 
+    }catch(error){
+        return new Response("failed to update propmt",{status:500})
+    }
 
-    }catch(error){}
 }
 

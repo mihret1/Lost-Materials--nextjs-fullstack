@@ -25,6 +25,23 @@ const MyProfile=()=>{
             router.push(`/update-prompt?id=${post._id}`)
     }
     const handleDelete=async(post)=>{
+        const hasConfrimed=confirm("are you sure u wanted to delete ?")
+         if(hasConfrimed){
+            try{
+                await fetch(`/api/prompt/${post._id.toString()}`,{
+                    method:'DELETE'
+                })
+
+                const filteredPosts=posts.filter((p)=>p._id !== post._id)
+                 setPosts(filteredPosts)
+            }catch(error){
+
+            }
+         }
+
+
+
+
 
     }
 

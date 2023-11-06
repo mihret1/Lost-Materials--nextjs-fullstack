@@ -33,3 +33,15 @@ export const PATCH=async (request,{params})=>{
 
 }
 
+
+export const DELETE=async(request,{params})=>{
+    try{
+        await connectToDB()
+        await Prompt.findByIdAndRemove(params.id)
+        return new Response("propmt is deleted successfully",{status:200})
+
+    }catch(error){
+            return new Response("failed to delete the propmt",{status:500})
+    }
+}
+

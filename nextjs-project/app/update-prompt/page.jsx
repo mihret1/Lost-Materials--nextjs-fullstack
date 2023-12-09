@@ -27,7 +27,7 @@ const EditPrompt=()=>{
                   setPost({
                     prompt:data.prompt,
                     tag:data.tag
-                  }) }
+                  }) } 
                   if(promptId) getPropmtDetails()
                 } ,[promptId])
 

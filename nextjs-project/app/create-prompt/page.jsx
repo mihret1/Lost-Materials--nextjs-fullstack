@@ -20,7 +20,8 @@ const CreatePrompt=()=>{
           e.preventDefault()
           setSubmiting(true)
 
-          try{
+          try
+          {
             const response=await fetch('/api/prompt/new',
             {
                 method:'POST',
@@ -29,12 +30,16 @@ const CreatePrompt=()=>{
                     tag:post.tag,
                     userId:session?.user.id
                 })
-            })
+            
+            }
+         )
+            
             if(response.ok){
                 router.push('/')
             }
 
-          }catch(error){
+          
+        }catch(error){
             console.log(error)
 
           }finally{

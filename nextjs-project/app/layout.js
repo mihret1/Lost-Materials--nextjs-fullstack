@@ -8,6 +8,7 @@ export const metadata={
     description:'find and post lost materials'
 }
 
+
 const RootLayout=({children})=>{
     return(
         <html lang='en'>
@@ -22,7 +23,6 @@ const RootLayout=({children})=>{
                   </main>
               </Provider>
             </body>
-
         </html>
     )
 }

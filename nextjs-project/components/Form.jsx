@@ -21,7 +21,7 @@ const Form=({type,post,setPost,submitting,handleSubmit})=>{
                 <textarea 
                    value={post.prompt}
                    onChange={(e)=>setPost({...post,prompt:e.target.value})}
-                   placeholder="write what you found"
+                   placeholder="write what you lost"
                    required
                    className="form_textarea"
                 
@@ -58,8 +58,7 @@ const Form=({type,post,setPost,submitting,handleSubmit})=>{
 
             </form>
             
-            
-            
+                        
             </section>
     )
 }

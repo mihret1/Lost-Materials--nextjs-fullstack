@@ -9,23 +9,22 @@ import Profile from "@components/Profile"
 const MyProfile=()=>{
     const { data:session }=useSession()
     const [posts,setPosts]=useState([])
-     const router=useRouter()
+    const router=useRouter()
+
     useEffect(()=>{
             const fetchPosts=async()=>{
-            const response=await fetch(`/api/users/${session?.user.id}/posts`)
-            
+            const response=await fetch(`/api/users/${session?.user.id}/posts`)            
             const data=await response.json()
-            setPosts(data)
+            setPosts(data) 
         }
-        // console.log(posts)
-       if(session?.user.id) fetchPosts()
-    },[])
+            if(session?.user?.id) fetchPosts()
+            },[])
 
     const handleEdit=(post)=>{
             router.push(`/update-prompt?id=${post._id}`)
     }
     const handleDelete=async(post)=>{
-        const hasConfrimed=confirm("are you sure u wanted to delete ?")
+        const hasConfrimed=confirm("are you sure you wanted to delete ?")
          if(hasConfrimed){
             try{
                 await fetch(`/api/prompt/${post._id.toString()}`,{
@@ -49,7 +48,7 @@ const MyProfile=()=>{
     return(
         <Profile 
             name="My"
-            desc="welcome to ur profile page"
+            desc="Welcome to ur profile page"
             data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
